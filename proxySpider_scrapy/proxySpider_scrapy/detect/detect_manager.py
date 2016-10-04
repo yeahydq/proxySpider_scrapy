@@ -52,10 +52,3 @@ class Detect_Manager(Thread):
         sqldb.updateID()
         print 'proxy good Num ---',goodNum
         print 'proxy bad Num ---',badNum
-
-
-
-
-
-
-

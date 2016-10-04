@@ -14,7 +14,9 @@ class DB_Helper(object):
         :return:
         '''
         #连接mongo数据库,并把数据存储
-        client = MongoClient()#'mongodb://localhost:27017/'///'localhost', 27017///'mongodb://tanteng:123456@localhost:27017/'
+        client = MongoClient('mongodb://localhost:27017/')#'mongodb://localhost:27017/'///'localhost', 27017///'mongodb://tanteng:123456@localhost:27017/'
+
+        #proxy is the db name, and proxys is the table name
         db = client.proxy
         self.proxys = db.proxys
 

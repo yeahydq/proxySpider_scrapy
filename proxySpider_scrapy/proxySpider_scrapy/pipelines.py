@@ -11,6 +11,7 @@ from proxySpider_scrapy.spiders.proxySpider import ProxySpider
 class ProxyPipeline(object):
     proxyId = 1 #设置一个ID号，方便多线程验证
     def process_item(self, item, spider):
+        print 'hello'
         '''
 
         :param item:

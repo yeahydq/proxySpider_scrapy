@@ -34,21 +34,12 @@ class Detect_Proxy(Thread):
     def badNum(self):
         return self.__badNum
 
-
     @badNum.setter
     def badNum(self,value):
         self.__badNum = value
 
-
-
-
-
     def run(self):
-
         self.detect()#开始检测
-
-
-
 
     def detect(self):
         '''
@@ -75,6 +66,7 @@ class Detect_Proxy(Thread):
             port = proxy['port']
             try:
                 proxy_host ="http://ha:ha@"+ip+':'+port #随便添加了账户名和密码，只是为了防止填写账户名密码暂停的情况
+                proxy_host ="http://"+ip+':'+port #随便添加了账户名和密码，只是为了防止填写账户名密码暂停的情况
                 response = urllib.urlopen(self.url,proxies={"http":proxy_host})
                 if response.getcode()!=200:
                     self.db_helper.delete({'ip':ip,'port':port})
@@ -89,16 +81,3 @@ class Detect_Proxy(Thread):
                 self.db_helper.delete({'ip':ip,'port':port})
                 self.__badNum += 1
                 continue
-
-
-
-
-
-
-
-
-
-
-
-
-
